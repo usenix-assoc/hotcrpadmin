@@ -1,0 +1,31 @@
+#!/usr/bin/env python
+## createdb.sh -- HotCRP database setup program
+## HotCRP is copyright (c) 2006-2007 Eddie Kohler and Regents of the UC
+## Distributed under an MIT-like license; see LICENSE
+
+## Create the database. The assumption is that database
+## name and user name and password are all the same
+## Refactored by Anthony Riley II see the original
+
+### EDIT THIS ###
+# Location of config file containing variables
+CONFFILE = "/usr/local/etc/hotcrp-usenix/hotcrp-usenix.conf"
+### END EDIT THIS ###
+
+import sys
+import re
+import MySQLdb
+import argparse
+parser = argparse.ArgumentParser(description='This is to create HotCRP Websites.')
+
+help = """
+    hotcrp-usenix-create performs MySQL database setup for HotCRP.
+    
+    Usage: hotcrp-usenix-create [CONFLOW]
+    
+    CONFLOW is the lowercase name of the conference, e.g., usenix08
+    Example: sudo ./hotcrp-usenix-create lisa08
+    """
+
+print help
+
